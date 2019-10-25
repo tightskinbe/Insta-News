@@ -8,15 +8,6 @@ const gulp = require("gulp"),
     cssnano = require('gulp-cssnano'),
     prettyError = require('gulp-prettyerror');
 
-gulp.task("lint", function () {
-    return gulp
-        .src("./js/*.js")
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
-});
-
-
 gulp.task('sass', function () {
     return gulp
         .src('./sass/style.scss')
@@ -32,6 +23,14 @@ gulp.task('sass', function () {
 });
 
 
+gulp.task("lint", function () {
+    return gulp
+        .src("./js/*.js")
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
 gulp.task("scripts",
     gulp.series("lint",
         function scripts() {
@@ -40,40 +39,33 @@ gulp.task("scripts",
                 .pipe(terser())
                 .pipe(rename({ extname: ".min.js" }))
                 .pipe(gulp.dest("./build/js"));
-        })
+        }
+    )
 );
+
 
 gulp.task("say_hello", function (done) {
     console.log("Hello!");
     done();
 });
 
-
-
-gulp.task("watch", function () {
-    gulp.watch("js/*.js", gulp.series("scripts"));
-});
-
-
-
+/**
+ * Browser Sync
+ */
 gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
             baseDir: "./"
         }
     });
+
+    gulp.watch(["*.html", "build/js/*.js", "build/css/*.css"])
+        .on("change", browserSync.reload);
 });
-
-gulp.watch(["*.html", "build/js/*.js", "build/css/*.css"])
-    .on("change", browserSync.reload);
-
 
 gulp.task("watch", function () {
     gulp.watch("js/*.js", gulp.series("scripts"));
     gulp.watch("sass/*.scss", gulp.series("sass"));
 });
-
-
-
 
 gulp.task("default", gulp.parallel("browser-sync", "watch"));

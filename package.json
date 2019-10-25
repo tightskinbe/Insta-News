@@ -1,13 +1,18 @@
 {
-  "name": "gulp-starter",
+  "name": "gulp-codealong",
   "version": "1.0.0",
-  "description": "",
+  "description": "My first gulp project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "hello": "echo 'Hello'"
   },
-  "author": "",
+  "keywords": [
+    "gulp",
+    "node",
+    "npm"
+  ],
+  "author": "Jim",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.7",
