@@ -1,0 +1,23 @@
+
+.all-news {
+    max-width: 1000px;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+
+@media (min-width: 600px) {
+    .all-news {
+        max-width: 1000px;
+        margin:0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5px;
+    }
+
+    // .flex {
+    //     // grid-column: 1 / 2;
+    // }
+
+}

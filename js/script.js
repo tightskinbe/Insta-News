@@ -1,44 +1,57 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     $('select').on('change', function () {
+        //todo GET value of select list create a varible 
+        const selectedOption = $('select').val()
+        console.log(selectedOption);
         $.ajax({
             method: 'GET',
-            url: 'https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=nYkZPIA5ulHyDytyZQa6phEckAhzQT3x'
+            url: 'https://api.nytimes.com/svc/topstories/v2/' + selectedOption + '.json?api-key=nYkZPIA5ulHyDytyZQa6phEckAhzQT3x'
         })
             .done(function (data) {
                 console.log(data);
+
+                // will clear html before appending
+                $('.all-news').html('');
+
                 $.each(data.results, function (key, value) {
                     console.log(value);
                     //random results
-                    const random = Math.floor(value.multimedia.length * Math.random());
-                    const randomImg = value.multimedia[random];
+                    //make it choose the 4th one
+
+                    // const random = Math.floor(value.multimedia.length * Math.random());
+
+                    const randomImg = value.multimedia[4];
+
+                    const title = value.title;
                     //random img
-                    // const randomImg = Math.floor(value.multimedia[random].length * Math.random());
-                    // console.log(randomImg);
-                    console.log(random);
-                    // $('.all-news').append(`<div><p>${data.copyright}</p><img src="${data.results[random].multimedia[randomImg].url}"> </div>`)
+                    // $('.no-content').hide()
 
-                    // commit this after
 
-                    $('.all-news').append(`<p>${random}</p>`)
-                    // this one
-                    $('.all-news').append(`<img src= "${randomImg.url}">`)
+                    // $('.all-news').append(`<p>${random}</p>`)
+
+                    $('all-news').filter()
+
+                    $('.all-news').append(`<div class="flex"><img src= "${randomImg.url}" width="100%"><div class="img-text"><p>${title}</p></div></div>`)
                     console.log(data);
 
                 });
             })
 
 
+
+
     });
 
 
-
-
-
-
-
-
-
+    // $('select').on('change', function () {
+    //     $.ajax({
+    //         method: 'GET',
+    //         url: 'https://api.nytimes.com/svc/topstories/v2/movies.json?api-key=nYkZPIA5ulHyDytyZQa6phEckAhzQT3x'
+    //     })
+    //         .done(function (data) {
+    //             console.log(data);
+    //         })
 
 
 
