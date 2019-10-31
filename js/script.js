@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     $('select').on('change', function () {
-        //todo GET value of select list create a varible 
         const selectedOption = $('select').val()
+
+        $('.loading').append('<img src="./images/ajax-loader.gif" width="50px" height="50px"/>')
+
         console.log(selectedOption);
         $.ajax({
             method: 'GET',
@@ -13,26 +15,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // will clear html before appending
                 $('.all-news').html('');
+                const results = data.results;
+                const filterResults = results.filter(function (newsItem) {
+                    return newsItem.multimedia[4] !== undefined;
+                })
+                    // only will show 12 things of content
+                    .slice(0, 12);
 
-                $.each(data.results, function (key, value) {
+
+                $.each(filterResults, function (key, value) {
                     console.log(value);
-                    //random results
-                    //make it choose the 4th one
 
-                    // const random = Math.floor(value.multimedia.length * Math.random());
+                    $('.loading').hide()
 
-                    const randomImg = value.multimedia[4];
-
-                    const title = value.title;
-                    //random img
-                    // $('.no-content').hide()
+                    $('.all-news').append(`<article class="news-art" style="background: url(${value.multimedia[4].url}); background-size: cover;"><p>${value.abstract}</p></article>`);
 
 
-                    // $('.all-news').append(`<p>${random}</p>`)
-
-                    $('all-news').filter()
-
-                    $('.all-news').append(`<div class="flex"><img src= "${randomImg.url}" width="100%"><div class="img-text"><p>${title}</p></div></div>`)
                     console.log(data);
 
                 });
@@ -43,15 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
-
-    // $('select').on('change', function () {
-    //     $.ajax({
-    //         method: 'GET',
-    //         url: 'https://api.nytimes.com/svc/topstories/v2/movies.json?api-key=nYkZPIA5ulHyDytyZQa6phEckAhzQT3x'
-    //     })
-    //         .done(function (data) {
-    //             console.log(data);
-    //         })
 
 
 

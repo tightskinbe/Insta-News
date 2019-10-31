@@ -5,19 +5,55 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 5px;
+    position: relative;
+
+    .news-art {
+        position: relative;
+        height: 20rem;
+        // width: 300px;
+    }
+    p {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+    }
 }
 
 @media (min-width: 600px) {
     .all-news {
-        max-width: 1000px;
-        margin:0 auto;
+        // max-width: 1000px;
+        margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 5px;
     }
 
-    // .flex {
-    //     // grid-column: 1 / 2;
-    // }
+
+}
+
+@media (min-width: 1250px) {
+    .all-news {
+        width: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 5px;
+    
+        .news-art {
+            position: relative;
+            height: 30rem;
+            width: 22rem;
+        }
+        p {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+        }
+    
+    
+    
+    }
 
 }

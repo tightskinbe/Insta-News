@@ -18,7 +18,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding-top:  10rem;
+    padding-top:  12.5rem;
+    font-size: 14px;
     font-family: "Open Sans";
     /* font-weight: bold; */
     /* font-style: italic; */
@@ -28,7 +29,10 @@ footer {
 
 
 select {
-    width: 6rem;
+    width: 8rem;
+    height: 2rem;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 
