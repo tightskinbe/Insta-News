@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     $('select').on('change', function () {
         const selectedOption = $('select').val()
 
-        $('.loading').append('<img src="./images/ajax-loader.gif" width="50px" height="50px"/>')
-
+        $(".loading").show();
+        $('.header').addClass('move-header');
         console.log(selectedOption);
         $.ajax({
             method: 'GET',
@@ -26,16 +26,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 $.each(filterResults, function (key, value) {
                     console.log(value);
 
-                    $('.loading').hide()
 
-                    $('.all-news').append(`<article class="news-art" style="background: url(${value.multimedia[4].url}); background-size: cover;"><p>${value.abstract}</p></article>`);
+                    $('.all-news').append(`<a href="${value.url}"><article class="news-art" style="background: url(${value.multimedia[4].url}); background-size: cover;"><p>${value.abstract}</p>
+                    </article></a>`);
 
 
                     console.log(data);
 
                 });
             })
-
+            .fail(function () {
+                console.log("Error in code");
+            })
+            .always(function () {
+                $('.loading').hide();
+            });
 
 
 

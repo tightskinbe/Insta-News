@@ -7,6 +7,7 @@
     grid-gap: 5px;
     position: relative;
 
+
     .news-art {
         position: relative;
         height: 20rem;
@@ -15,11 +16,15 @@
     p {
         position: absolute;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.5);
         padding: 10px;
+        transition: background 0.3s, color 0.5s 0.3s;
     }
-}
 
+}
+p:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
 @media (min-width: 600px) {
     .all-news {
         // max-width: 1000px;
