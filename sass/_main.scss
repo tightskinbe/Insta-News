@@ -20,14 +20,12 @@ header {
 
 footer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-end;
-    padding-top:  12.5rem;
+    padding: 5px;
     font-size: 14px;
     font-family: "Open Sans";
-    /* font-weight: bold; */
-    /* font-style: italic; */
-    
+
 }
 
 

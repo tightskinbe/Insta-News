@@ -21,15 +21,13 @@ header {
 footer {
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: end;
           align-items: flex-end;
-  padding-top: 12.5rem;
+  padding: 5px;
   font-size: 14px;
-  font-family: "Open Sans";
-  /* font-weight: bold; */
-  /* font-style: italic; */ }
+  font-family: "Open Sans"; }
 
 select {
   width: 8rem;
@@ -87,21 +85,55 @@ p:hover {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px; } }
+    grid-gap: 5px; }
+  .move-header {
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    line-height: 2rem; }
+    .move-header .logo {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      left: 15%; } }
 
-@media (min-width: 1250px) {
+@media (min-width: 1150px) {
   .all-news {
-    width: 100%;
     margin: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px; }
+    grid-gap: 5px;
+    position: relative; }
     .all-news .news-art {
       position: relative;
-      height: 30rem;
+      height: 20rem;
       width: 22rem; }
     .all-news p {
       position: absolute;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px; } }
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      -webkit-transition: background 0.3s, color 0.5s 0.3s;
+      transition: background 0.3s, color 0.5s 0.3s; }
+  p:hover {
+    background: rgba(0, 0, 0, 0.9); }
+  .move-header {
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    line-height: 2rem; }
+    .move-header .logo {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      left: 15%; } }
