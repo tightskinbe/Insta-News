@@ -38,8 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             })
             .fail(function () {
-                console.log("Error in code");
+                $('.all-news').append(`<p>Error could not get data from Instanews. Check internet connection.</p>`);
             })
+            //hides loading img after content loaded
             .always(function () {
                 $('.loading').hide();
             });

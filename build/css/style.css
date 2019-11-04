@@ -1,7 +1,7 @@
 body {
   background-color: black;
   color: white;
-  font-family: 'Open Sans'; }
+  font-family: 'Open Sans lite'; }
   body a {
     text-decoration: none;
     color: white; }
@@ -22,7 +22,8 @@ footer {
   text-align: center;
   padding-top: 12rem;
   font-size: 14px;
-  font-family: "Open Sans"; }
+  font-family: "Open Sans";
+  color: #c2c2c2; }
 
 .move-footer {
   padding: 3rem; }
