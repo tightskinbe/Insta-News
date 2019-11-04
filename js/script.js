@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         $(".loading").show();
         $('.header').addClass('move-header');
+        $('.footer').addClass('move-footer');
+
         console.log(selectedOption);
         $.ajax({
             method: 'GET',

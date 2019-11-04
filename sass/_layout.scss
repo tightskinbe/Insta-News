@@ -33,7 +33,13 @@ p:hover {
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 5px;
     }
-
+    .loading{
+        position: absolute;
+        top: 10%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        display: none;
+        }
         .move-header {
             text-align: center;
             display: flex;

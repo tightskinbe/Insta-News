@@ -1,10 +1,10 @@
 body {
     background-color: $main-color;
-    color: white;
+    color: $text-color;
     font-family: 'Open Sans';
     a {
     text-decoration: none;
-    color: white
+    color: $text-color;
     }
 }
 
@@ -19,16 +19,16 @@ header {
 
 
 footer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding: 5px;
+    text-align: center;
+    padding-top: 12rem;
     font-size: 14px;
     font-family: "Open Sans";
 
 }
 
-
+.move-footer {
+padding: 3rem;
+}
 
 select {
     width: 8rem;

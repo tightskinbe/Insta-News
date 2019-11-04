@@ -19,15 +19,13 @@ header {
   line-height: 2rem; }
 
 footer {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: end;
-          align-items: flex-end;
-  padding: 5px;
+  text-align: center;
+  padding-top: 12rem;
   font-size: 14px;
   font-family: "Open Sans"; }
+
+.move-footer {
+  padding: 3rem; }
 
 select {
   width: 8rem;
@@ -86,6 +84,13 @@ p:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px; }
+  .loading {
+    position: absolute;
+    top: 10%;
+    left: 70%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: none; }
   .move-header {
     text-align: center;
     display: -webkit-box;
